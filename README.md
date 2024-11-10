@@ -1,1 +1,1 @@
-# VideoTranslation
+# HeyGen - Video Translation Project
