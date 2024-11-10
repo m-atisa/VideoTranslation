@@ -17,6 +17,7 @@ class VideoTranslationServer:
             return {"result": self.video_status}
         
     async def simulate_translation(self):
+        await asyncio.sleep(self.delay_amount)
         if random.random() < self.error_probability:
             self.video_status = "error"
         else: 
