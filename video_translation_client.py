@@ -1,11 +1,12 @@
 import requests
 import time
 
+
 class VideoTranslationClient:
-    def __init__(self. server_url: str, polling_interval: int = 5) -> None:
+    def __init__(self, server_url: str, polling_interval: int = 5) -> None:
         self.server_url = server_url
         self.polling_interval = polling_interval
-    
+
     def _make_get_request(self):
         try:
             response = requests.get(f"{self.server_url}/status")
@@ -22,5 +23,9 @@ class VideoTranslationClient:
         elif status == "error":
             print("An error occurred during the video translation process")
         else:
-            print("Translation is still pending, cheking again in " + str(self.polling_interval) + " seconds")
+            print(
+                "Translation is still pending, cheking again in "
+                + str(self.polling_interval)
+                + " seconds"
+            )
             time.sleep(self.polling_interval)
