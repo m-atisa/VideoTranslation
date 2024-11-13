@@ -105,7 +105,7 @@ class VideoTranslationServer:
                 # Wait for webhook registration if not already registered
                 if not self.webhook_url:
                     logging.info(f"Waiting for webhook registration to notify final status: {self.video_status}")
-                    await self.webhook_registered_event.wait()  # Wait until the webhook is registered
+                    await self.webhook_registered_event.wait()
 
                 # Only send the notification if not already sent
                 if not self.notification_sent:
@@ -118,8 +118,3 @@ class VideoTranslationServer:
         logging.info("Translation simulation ended.")
 
 
-if __name__ == "__main__":
-    server = VideoTranslationServer(error_probability=0.1, length_of_translation=20)
-
-    app = server.app
-    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -53,20 +53,3 @@ class VideoTranslationClient:
 
     def get_job_status(self):
         return self.latest_status
-
-
-if __name__ == "__main__":
-
-    client = VideoTranslationClient(
-        server_url="http://localhost:8000", webhook_host="localhost", webhook_port=5000,
-    )
-
-    client.register_webhook()
-
-    while client.get_job_status() == "pending":
-        logging.info(
-            f"Job status: {client.get_job_status()} (waiting for update from server...)"
-        )
-        time.sleep(2)
-
-    logging.info(f"Final job status: {client.get_job_status()}")
