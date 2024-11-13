@@ -64,7 +64,7 @@ client = VideoTranslationClient(webhook_host="localhost", webhook_port=3120)
 ```bash
 client.register_webhook()
 ```
-Once the webhook is registered the server will automatically notify the client when the translation is in a `completed` or `error` state.
+Once the webhook is registered the server will automatically notify the client when the translation is in a `completed` or `error` state. The updated value can be checked with the function ```get_job_status()```.
 
 ### Prerequisites:
 
