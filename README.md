@@ -51,7 +51,6 @@ The **Client** is responsible for:
 - **Webhook Registration**: Registers the client's webhook URL with the Video Translation Server. The server will send job status updates to this URL.
 - **Webhook Handling**: Spins up a FastAPI application that listens for POST requests from the server to update the job status.
 - **Thread Management**: Runs the webhook server in a separate thread to allow asynchronous communication with the server.
-- **Immediate Status Fetch**: After webhook registration, the client fetches the current job status from the server to handle cases where the job is already progressing.
 
 ---
 
