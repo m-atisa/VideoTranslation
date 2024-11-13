@@ -57,6 +57,16 @@ The **Client** is responsible for:
 
 ## How to Use the Client Code
 
+1. Initialize the client
+```bash
+client = VideoTranslationClient(webhook_host="localhost", webhook_port=3120)
+```
+2. Register webhook with server
+```bash
+client.register_webhook()
+```
+Once the webhook is registered the server will automatically notify the client when the translation is in a `completed` or `error` state.
+
 ### Prerequisites:
 
 First create a new environment to install packages into
